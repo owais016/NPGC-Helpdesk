@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPGC Helpdesk</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='appstyle.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- headers -->
+    <header class="header">
+        <img src="{{ url_for('static', filename='npgclogo2.png') }}" class="logo">
+        <div class="title">NPGC Helpdesk</div>
+        <button id="feedbackBtn" class="feedback-btn">Feedback</button>
+    </header>
+
+    <!-- Chat area -->
+    <div class="chat-container" id="chatContainer"></div>
+
+    <!-- suggest questions -->
+    <div id="suggestions" class="suggestions"></div>
+
+
+    <!-- Input -->
+    <div class="input-wrapper" id="inputWrapper">
+        <input type="text" id="userInput" placeholder="Ask something">
+
+        <button id="micBtn" class="mic-btn">
+            <span class="material-icons mic-icon">mic</span>
+
+            <div class="wave">
+                <span></span><span></span><span></span>
+            </div>
+        </button>
+
+        <button class="send-btn" type="button">
+            <span class="material-icons">send</span>
+        </button>
+
+    </div>
+
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h3>Send your Feedback</h3>
+            <textarea id="feedbackText" placeholder="Write your feedback..."></textarea>
+            <button id="submitFeedback">Submit</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='appscript.js') }}"></script>
+</body>
+
+</html>
